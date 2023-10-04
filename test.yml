@@ -1,0 +1,12 @@
+---
+- name: VM_Info playbook
+  hosts: localhost
+  gather_facts: false
+  vars:
+    un: 1
+    deux: 2
+
+  tasks:
+    - name: Test vars
+      ansible.builtin.debug:
+        msg: un={{ un }}, deux={{ deux }}, var_available_in_playbook_1={{ var_available_in_playbook_1 }}, var_available_in_playbook_2={{ var_available_in_playbook_2 }}
