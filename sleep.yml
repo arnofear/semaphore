@@ -1,0 +1,9 @@
+---
+- name: Sleep playbook
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Pause de {{ secondes }} secondes
+      pause:
+        seconds: "{{ secondes }}"
