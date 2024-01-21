@@ -1,0 +1,15 @@
+---
+- name: VM_Info playbook
+  hosts: localhost
+  gather_facts: false
+  vars:
+    secondes: 180
+
+  tasks:
+    - name: Affiche vm vars
+      ansible.builtin.debug:
+        msg: my_os={{ my_os }},my_vm_name={{ my_vm_name }},my_subnet_name={{ my_subnet_name }},src_vm_uuid={{ src_vm_uuid }},vm_cpu={{ vm_cpu }},vm_ram={{ vm_ram }},vm_disk_size={{ vm_disk_size }},join_domain={{ join_domain }},windows_update={{ windows_update }}
+
+    - name: Pause de {{ secondes }} secondes
+      pause:
+        seconds: "{{ secondes }}"
